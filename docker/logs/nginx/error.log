@@ -1,0 +1,8 @@
+2019/09/04 02:49:41 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
+2019/09/04 02:56:03 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
+2019/09/04 03:01:12 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
+2019/09/04 03:03:22 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
+2019/09/04 03:03:29 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
+2019/09/05 01:37:28 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
+2019/09/05 01:40:18 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
+2019/09/05 01:40:44 [emerg] 6#6: host not found in upstream "php-fpm:9000" in /etc/nginx/conf.d/upstream.conf:1
