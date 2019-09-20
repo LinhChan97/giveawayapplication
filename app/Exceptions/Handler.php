@@ -84,12 +84,12 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof AuthenticationException) {
             $this->setStatus(JsonResponse::HTTP_UNAUTHORIZED)
-                ->setMeta($exception->getMessage());
+                ->setMeta('auth.errors.unauthenticated');
         }
 
         if ($exception instanceof NotFoundHttpException) {
             $this->setStatus(JsonResponse::HTTP_NOT_FOUND)
-                ->setMeta($exception->getMessage());
+                ->setMeta('error.request-not-found');
         }
 
         if ($exception instanceof \HttpResponseException) {
@@ -107,7 +107,7 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof ModelNotFoundException) {
             $this->setStatus(JsonResponse::HTTP_NOT_FOUND)
-                ->setMeta($exception->getMessage());
+                ->setMeta('error.request-not-found');
         }
 
         if ($exception instanceof AuthorizationException) {
@@ -117,12 +117,12 @@ class Handler extends ExceptionHandler
 
         if ($exception instanceof BadRequestHttpException) {
             $this->setStatus(JsonResponse::HTTP_BAD_REQUEST)
-                ->setMeta($exception->getMessage());
+                ->setMeta('error.bad-request');
         }
 
         if ($exception instanceof UnauthorizedException) {
-                $this->setStatus(JsonResponse::HTTP_UNAUTHORIZED)
-                >setMeta($exception->getMessage());
+            $this->setMeta('auth.errors.unauthenticated')
+                ->setStatus(JsonResponse::HTTP_UNAUTHORIZED);
         }
 
         if ($exception instanceof UnauthorizedHttpException) {

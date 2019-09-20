@@ -39,10 +39,6 @@ trait ApiResponser
             'meta' => $this->meta,
             'data' => $this->data
         ];
-        # Check on local and enable debug
-        if (config('app.debug') && config('app.env') == 'local') {
-            $response['_debugbar'] = app('debugbar')->getData();
-        }
 
         return response($response, $this->status);
     }
