@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\V1\User;
+use App\Models\V1\Role;
 
 class UserTableSeeder extends Seeder
 {
@@ -12,6 +13,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\V1\User::class, 1)->create(['name' => 'admin']);
+        $user = factory(App\Models\V1\User::class, 1)->create(['name' => 'admin', 'username' => 'admin']);
     }
 }

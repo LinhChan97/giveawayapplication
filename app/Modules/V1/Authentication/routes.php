@@ -4,18 +4,9 @@ Route::group([
     'namespace' => 'App\Modules\V1\Authentication\Controllers',
 ], function () {
     Route::group(['prefix' => 'v1/auth/'], function () {
-        Route::post('/login', [
-            'uses' => 'AuthenticateController@login',
-            'name' => 'auth.login'
-        ]);
-        Route::get('/logout', [
-            'uses' => 'AuthenticateController@logout',
-            'name' => 'auth.logout',
-            'middleware' => ['auth:api', 'auth.admin'],
-        ]);
-        Route::get('/me', [
-            'uses' => 'AuthenticateController@getCurrentUser',
-            'name' => 'auth.me',
-        ]);
+        Route::post('/login', 'AuthenticateController@login')->name('login');
+        Route::post('/register', 'AuthenticateController@register')->name('register');
+        Route::get('/logout', 'AuthenticateController@logout')->name('logout');
+        Route::get('/me', 'AuthenticateController@getCurrentUser')->name('auth.me');
     });
 });

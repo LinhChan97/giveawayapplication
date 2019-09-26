@@ -14,23 +14,11 @@ class LoginRequest extends Request
     public function rules()
     {
         return [
-            'username' => 'required',
-            'password' => 'required',
+            'username' => 'required|exists:users,username',
+            'password' => 'required|min:8',
         ];
     }
-
-    /**
-     * Get the error messages for the defined validation rules.
-     *
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            'username.required' => trans('validation.username-required'),
-            'password.required'  => trans('validation.password-required')
-        ];
-    }
+    
     /**
      * Add parameters to be validated
      *

@@ -1,7 +1,8 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Models\V1\User;
+use App\Models\V1\Role;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -21,5 +22,13 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => $faker->name,
         'username' => $faker->unique()->username,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'address' => $faker->address,
+        'phone_number' => $faker->phoneNumber,
+        'avatar' => $faker->imageUrl,
+    ];
+});
+$factory->define(Role::class, function (Faker $faker) {
+    return [
+        'name' => $faker->name,
     ];
 });
