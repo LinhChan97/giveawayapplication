@@ -3,15 +3,10 @@
 namespace App\Modules\V1\Authentication\Services;
 
 use App\Models\V1\User;
-use App\Models\V1\Card;
 use \Illuminate\Auth\AuthenticationException;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Log;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Carbon;
 use DB;
-use Faker\Factory as Faker;
 use App\Modules\V1\Authentication\Repositories\AuthenticationRepository;
 
 class AuthenticationService
