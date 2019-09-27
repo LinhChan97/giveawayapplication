@@ -11,6 +11,10 @@ class MainModel extends EloquentModel
 {
     use Timezone;
 
+    const PUBLIC_STATUS = 0;
+    const PRIVATE_STATUS = 1;
+    const LIST_STATUS = [self::PUBLIC_STATUS, self::PRIVATE_STATUS];
+
     //define per page for paginator
     protected $perPage = 20;
 

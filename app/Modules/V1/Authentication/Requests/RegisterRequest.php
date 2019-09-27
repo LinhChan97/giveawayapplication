@@ -22,7 +22,7 @@ class RegisterRequest extends Request
             'address'            => 'required|string',
             'password'         => 'required|min:8',
             'password_confirm' => 'required|same:password',
-            'role_id'          => 'required|numeric|in:'.join(',', [Role::DONOR_ROLE => 2, Role::CHARITY_ROLE => 3])
+            'role_id'          => 'required|numeric|in:'.join(',', [Role::DONOR_ROLE, Role::CHARITY_ROLE])
         ];
     }
     
