@@ -62,4 +62,10 @@ class Repository extends BaseRepository
 
         return $this->parserResult($results);
     }
+    public function createRelation($data) {
+
+    }
+    public function updateRelation($data) {
+
+    }
 }
