@@ -20,7 +20,7 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->string('avatar')->nullable();
             $table->string('description')->nullable();
-            $table->string('text')->nullable();
+            $table->text('text')->nullable();
             $table->float('price');
             $table->timestamps();
         });
@@ -33,6 +33,8 @@ class CreateItemsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('items');
+        Schema::enableForeignKeyConstraints();
     }
 }

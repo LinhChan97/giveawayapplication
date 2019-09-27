@@ -22,8 +22,8 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->string('status')->default(0);
             $table->string('avatar')->nullable();
-            $table->string('description')->nullable();
-            $table->string('text');
+            $table->text('description')->nullable();
+            $table->text('text');
             $table->integer('goal_item');
             $table->date('start_date');
             $table->date('end_date');
@@ -39,6 +39,8 @@ class CreateEventsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('events');
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -13,6 +13,10 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = factory(App\Models\V1\User::class, 1)->create(['name' => 'admin', 'username' => 'admin']);
+        for($i = 0; $i<10; $i++) {
+            factory(App\Models\V1\User::class, 1)->create(['name' => Role::ADMIN_ROLE, 'username' => 'admin'.$i]);
+            factory(App\Models\V1\User::class, 1)->create(['name' => Role::DONOR_ROLE, 'username' => 'donor'.$i]);
+            factory(App\Models\V1\User::class, 1)->create(['name' => Role::CHARITY_ROLE, 'username' => 'charity'.$i]);
+        }
     }
 }

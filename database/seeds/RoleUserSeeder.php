@@ -13,11 +13,8 @@ class RoleUserSeeder extends Seeder
      */
     public function run()
     {
-        $adminRole = Role::first();
         foreach (User::all() as $user) {
-            if($user->name == 'admin') {
-                $user->roles()->sync($adminRole);
-            }
+            $user->roles()->sync(Role::where('name', $user->name)->firstOrFail());
         }
     }
 }
