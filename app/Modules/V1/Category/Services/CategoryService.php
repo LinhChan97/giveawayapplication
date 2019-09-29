@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Modules\V1\Cause\Services;
+namespace App\Modules\V1\Category\Services;
 
-use App\Modules\V1\Cause\Repositories\CauseRepository;
+use App\Modules\V1\Category\Repositories\CategoryRepository;
 use App\Modules\Service as BaseService;
 
-class CauseService extends BaseService
+class CategoryService extends BaseService
 {
     /**
-     * CauseService constructor.
-     * @param CauseRepository $CauseRepository
+     * CategoryService constructor.
+     * @param CategoryRepository $CategoryRepository
      */
-    public function __construct(CauseRepository $CauseRepository)
+    public function __construct(CategoryRepository $CategoryRepository)
     {
-        parent::__construct($CauseRepository);
+        parent::__construct($CategoryRepository);
     }
 }
