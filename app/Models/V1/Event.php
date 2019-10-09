@@ -8,6 +8,8 @@ class Event extends MainModel
 {
     protected $table = 'events';
 
+    protected $searchField = 'name';
+
     /**
      * The attributes that are mass assignable.
      *

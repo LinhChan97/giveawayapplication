@@ -11,26 +11,11 @@ class ItemController extends BaseController
     /**
      * ItemController constructor.
      *
-     * @param ItemService $ItemService ItemService
+     * @param ItemService $itemService ItemService
      */
-    public function __construct(ItemService $ItemService)
+    public function __construct(ItemService $itemService)
     {
-        parent::__construct($ItemService);
-    }
-
-    /**
-     * Get all objects
-     *
-     * @param App\Modules\Request $request request
-     *
-     * @return mixed
-     */
-    public function index(Request $request)
-    {
-        $data = $this->service->getAll($request->all());
-
-        return $this->setData($data)
-            ->setMeta(__('messages.request_success'))
-            ->jsonOut();
+        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->service = $itemService;
     }
 }

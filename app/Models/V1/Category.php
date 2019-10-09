@@ -8,6 +8,7 @@ class Category extends MainModel
 {
     protected $table = 'categories';
 
+    protected $searchField = 'name';
     /**
      * The attributes that are mass assignable.
      *

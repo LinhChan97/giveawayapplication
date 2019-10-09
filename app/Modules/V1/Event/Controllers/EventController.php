@@ -15,22 +15,7 @@ class EventController extends BaseController
      */
     public function __construct(EventService $eventService)
     {
-        parent::__construct($eventService);
-    }
-
-    /**
-     * Get all objects
-     *
-     * @param App\Modules\Request $request request
-     *
-     * @return mixed
-     */
-    public function index(Request $request)
-    {
-        $data = $this->service->getAll($request->all());
-
-        return $this->setData($data)
-            ->setMeta(__('messages.request_success'))
-            ->jsonOut();
+        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->service = $eventService;
     }
 }

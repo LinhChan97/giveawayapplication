@@ -11,10 +11,11 @@ class CategoryController extends BaseController
     /**
      * CategoryController constructor.
      *
-     * @param CategoryService $CategoryService CategoryService
+     * @param CategoryService $categoryService CategoryService
      */
-    public function __construct(CategoryService $CategoryService)
+    public function __construct(CategoryService $categoryService)
     {
-        parent::__construct($CategoryService);
+        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->service = $categoryService;
     }
 }

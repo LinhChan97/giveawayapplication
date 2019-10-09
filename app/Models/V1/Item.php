@@ -8,6 +8,8 @@ class Item extends MainModel
 {
     protected $table = 'items';
 
+    protected $searchField = 'name';
+
     /**
      * The attributes that are mass assignable.
      *

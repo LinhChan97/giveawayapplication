@@ -8,6 +8,8 @@ class Cause extends MainModel
 {
     protected $table = 'causes';
 
+    protected $searchField = 'name';
+    
     /**
      * The attributes that are mass assignable.
      *

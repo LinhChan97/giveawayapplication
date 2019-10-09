@@ -29,6 +29,6 @@ class ItemRepository extends BaseRepository
      */
     public function getAll(array $data = null)
     {
-        return $this->model->with(['category'])->get();
+        return $this->model->with(['category'])->querySearch()->paginate();
     }
 }
