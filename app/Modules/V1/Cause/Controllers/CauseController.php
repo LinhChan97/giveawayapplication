@@ -11,10 +11,11 @@ class CauseController extends BaseController
     /**
      * CauseController constructor.
      *
-     * @param CauseService $CauseService CauseService
+     * @param CauseService $causeService CauseService
      */
-    public function __construct(CauseService $CauseService)
+    public function __construct(CauseService $causeService)
     {
-        parent::__construct($CauseService);
+        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->service = $causeService;
     }
 }
