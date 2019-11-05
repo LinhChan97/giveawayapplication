@@ -27,4 +27,17 @@ class EventService extends BaseService
     {
         return $this->repository->getAll();
     }
+
+    /**
+     * Get object by uid
+     *
+     * @param string $uid uid of object
+     * @param mixed  $data Data
+     *
+     * @return mixed
+     */
+    public function find(string $uid)
+    {
+        return $this->repository->with(['cause', 'user'])->find($uid);
+    }
 }

@@ -14,6 +14,15 @@ class EventSeeder extends Seeder
      */
     public function run()
     {
+        $avatars = array(
+            'https://i.imgur.com/PlAcvRv.jpg',
+            'https://i.imgur.com/gwuHbxg.jpg',
+            'https://i.imgur.com/8YZ05Vd.jpg',
+            'https://i.imgur.com/TQykoum.jpg',
+            'https://i.imgur.com/IBaxf9G.jpg',
+            'https://i.imgur.com/LqAjmfx.jpg',
+            'https://i.imgur.com/oaVVdOK.jpg'
+        );
         $events = array(
             'name' => 'Hurricane Dorian Bahamas Relief Drive',
             'description' => '76,000 people are left homeless and in need of assistance in the Abaco Islands and the Grand Bahama Island, per the U.N. Help is needed today!',
@@ -27,6 +36,7 @@ class EventSeeder extends Seeder
             'text' => $events['text'],
             'user_id' => $users[rand(1,10)],
             'cause_id' => $causes[rand(1,5)],
+            'avatar' => $avatars[rand(0,6)]
         ]);
     }
 }

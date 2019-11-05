@@ -15,22 +15,7 @@ class Cors
      */
     public function handle($request, Closure $next)
     {
-        if (isset($_SERVER['HTTP_ORIGIN'])) {
-            header("Access-Control-Allow-Origin:*");
-            header("Access-Control-Allow-Headers:accept, content-type");
-            header("Access-Control-Allow-Methods:GET, POST, PUT, DELETE, OPTIONS");
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-            if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
-                header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
-
-            if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']))
-                header("Access-Control-Allow-Headers: {$_SERVER['HTTP_ACCESS_CONTROL_REQUEST_HEADERS']}");
-
-            exit(0);
-        }
-
-        return $next($request);
+        $response = $next($request);
+        return $response->header('Content-Type', 'text/plain charset=UTF-8');
     }
 }

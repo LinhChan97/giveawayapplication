@@ -15,7 +15,7 @@ class EventController extends BaseController
      */
     public function __construct(EventService $eventService)
     {
-        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
         $this->service = $eventService;
     }
 }
