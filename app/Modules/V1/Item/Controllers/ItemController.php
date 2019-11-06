@@ -15,7 +15,7 @@ class ItemController extends BaseController
      */
     public function __construct(ItemService $itemService)
     {
-        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
         $this->service = $itemService;
     }
 }

@@ -15,7 +15,7 @@ class CharityController extends BaseController
      */
     public function __construct(CharityService $charityService)
     {
-        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
         $this->service = $charityService;
     }
 }

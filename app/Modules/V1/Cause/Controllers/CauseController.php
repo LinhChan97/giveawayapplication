@@ -15,7 +15,7 @@ class CauseController extends BaseController
      */
     public function __construct(CauseService $causeService)
     {
-        $this->middleware('auth:api', ['except' => ['index']]);
+        $this->middleware('auth:api', ['except' => ['index', 'show']]);
         $this->service = $causeService;
     }
 }
